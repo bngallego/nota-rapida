@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notas rapidas, una manera rapida de escribir tareas o recordatorios">
+    <link rel="preload" href="app.css" as="style">
+    <link rel="stylesheet" href="app.css">
+    <title>Nota rápida</title>
+    <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.css">
+</head>
+<body class="bg-white dark:bg-gray-900">
+    <section class="container px-5 pt-24 mx-auto body-font h-screen">
+        <div class="flex justify-center m-1 outline-none">
+        <button onmousedown="sonido.play()" id="boton">
+         <img id="image" src="img/bxs-moon.svg" alt="moon">
+        </button>
+    </div>
+     <div class="flex justify-center object-none ">
+         <div class="w-96 md:w-1/2 rounded overflow-hidden shadow-2xl bg-gray-50 dark:bg-gray-800 ">
+             <div class="p-2 py-4">
+                 <h1 class="font-bold text-3xl mb-2 text-gray-900 dark:text-gray-300 text-center">Nota rápida</h1>
+                     <form id="formulario" class="flex">
+                 <input type="text" class="order-1 mr-1 ml-1 rounded-lg border-transparent appearance-none border border-gray-300 w-full py-2 px-2 bg-gray-100 text-gray-700 dark:bg-gray-300 placeholder-gray-700 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent" placeholder="Escribe una tarea..." id="input">
+                 <button id="emojis" type="button"><img src="img/bxs-smile.svg" alt="svg">
+                 </button>
+                 <button type="submit" class="p-1 transition ease-in duration-200 uppercase rounded-lg bg-blue-600  border-2 border-blue-600 focus:outline-none order-1"><img src="img/bx-send.svg" alt="svg"></button>
+             </form>
+                 <div id="lista-tareas" class="listatareas h-40 overflow-y-auto">
+                 </div>
+                 <div class="flex items-baseline flex-col-reverse justify-between mt-1.5" id="cont_flex">
+                     <button class="mt-2.5 p-1 w-full lg:w-1/5 rounded-lg transition ease-in duration-200 hover:bg-red-700 bg-red-600 border-red-50 focus:outline-none text-white font-semibold hidden shadow-2xl" id="eliminarTodo">Eliminar Todo</button>
+                     <p class="cont_pendiente mr-2 text-gray-900 dark:text-gray-300 font-medium">Pendientes: <span class="pendientes"></span></p>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ </section>
+
+ <script src="https://cdn.jsdelivr.net/npm/emoji-button@latest/dist/index.min.js"></script>
+ <script src="app.js" type="module"></script>
+</body>
+</html>
